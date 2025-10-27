@@ -205,3 +205,29 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Fichiers d'état Terraform locaux
+*.tfstate
+*.tfstate.backup
+
+# Fichiers de plan Terraform (peuvent contenir des secrets)
+*.tfplan
+
+# Dossiers Terraform (générés par 'terraform init')
+.terraform/
+
+# Fichiers de logs de crash
+crash.log
+crash.*.log
+
+# Fichiers de variables locales (souvent utilisés pour des secrets locaux)
+*.tfvars
+*.auto.tfvars
+
+# Fichiers de configuration de l'éditeur
+.idea/
+.vscode/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
