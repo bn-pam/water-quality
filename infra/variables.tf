@@ -13,5 +13,5 @@ variable "project_name" {
 variable "containers" {
   description = "Liste des conteneurs (filesystems) à créer dans l'ADLS."
   type        = list(string)
-  default     = ["lz", "bronze", "silver", "gold"]
+  default     = ["raw", "bronze", "silver", "gold"]
 }
