@@ -1,0 +1,30 @@
+name: Semantic Release
+
+on:
+  push:
+    branches:
+      - main # Le déclencheur est un push sur la branche principale
+
+jobs:
+  release:
+    name: Create Semantic Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # IMPORTANT : Nécessaire pour que Semantic Release analyse tout l'historique
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Execute Semantic Release
+        run: npx semantic-release
+        env:
+          # Le GITHUB_TOKEN est automatiquement fourni par GitHub Actions et permet de créer les releases et les tags
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

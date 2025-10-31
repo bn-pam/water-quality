@@ -39,8 +39,7 @@ resource "random_string" "suffix" {
 
 # 2. Créer un Azure Data Lake Storage Gen2
 resource "azurerm_storage_account" "adls_storage" {
-  # Nom globalement unique, ex: adlsqualiteeaufrancea1b2c3
-  name                     = "adls${replace(var.project_name, "-", "")}${random_string.suffix.result}"
+  name = "st${replace(var.project_name, "-", "")}${random_string.suffix.result}"
   resource_group_name      = azurerm_resource_group.rg_data_project.name
   location                 = azurerm_resource_group.rg_data_project.location
   account_tier             = "Standard"
