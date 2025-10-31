@@ -1,0 +1,14 @@
+{
+  "name": "pipeline-qualite-eau",
+  "version": "0.0.0",
+  "description": "Pipeline Data Engineering pour la qualité de l'eau.",
+  "private": true,
+  "scripts": {
+    "semantic-release": "semantic-release"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "semantic-release": "^22.0.8"
+  }
+}
