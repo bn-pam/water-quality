@@ -9,6 +9,12 @@ jobs:
   release:
     name: Create Semantic Release
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write # Permet d'écrire les tags et de commiter le CHANGELOG
+      issues: write   # Permet au plugin @semantic-release/github de créer une issue en cas d'échec
+      pull-requests: write # Permet au plugin @semantic-release/github de commenter les PRs
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
