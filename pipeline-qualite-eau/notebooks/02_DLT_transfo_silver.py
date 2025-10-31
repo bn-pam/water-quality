@@ -144,6 +144,7 @@ def silver_detailed_results_pipeline():
 
             # Paramètres de prélèvement
             col("res.referenceprel").alias("prelevement_reference"),
+            col("limitequal").cast(DoubleType()).alias("limite_qualite_reglementaire"),
 
             # Date et Partitionnement
             to_date(col("plv.dateprel"), "yyyy-MM-dd").alias("prelevement_date"),
